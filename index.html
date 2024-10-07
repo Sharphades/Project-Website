@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script defer src="/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Flighter</title>
+</head>
+<body class="bg-yellow vh-100">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body pt-0">
+            <ul class="navbar-nav flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Bookings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact us</a>
+                </li>
+            </ul>
+            <button class="btn btn-outline-secondary" type="button">Login</button>
+        </div>
+    </div>
+    <!-- Main Section -->
+    <section class="main-section h-100">
+        <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+            <div class="container-fluid">
+                <a style="color: rgb(49, 2, 47);" class="navbar-brand" href="#">Flighter</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto w-100 d-flex justify-content-center align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Bookings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact us</a>
+                        </li>
+                    </ul>
+                    <button class="btn btn-primary" type="button">Login</button>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid d-flex h-75">
+            <div class="container d-flex flex-column align-items-center justify-content-center">
+                <h1 class="black text-center">Life Is Short And The World Is Wide!</h1>
+                <p class="white text-center">To get the best of your adventure you just need to leave and go where you like. We are waiting for you.</p>
+                <a style="text-decoration: none;" href="#form">
+                    <button class="button">
+                        <span class="text">Book now</span>
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div id="form" class="container-fluid">
+            <div class="container d-flex flex-column align-items-center justify-content-center form py-2">
+                <h1>Travel is Calling!</h1>
+                <p>Book your escape today!</p>
+                
+                <form class="w-75">
+                    <fieldset class="mb-4">
+                        <div class="row g-1 mb-3">
+                            <div class="col-md-6">
+                                <label for="departure" class="form-label">From</label>
+                                <select id="departure" class="form-select" required>
+                                    <option value="">Choose a route</option>
+                                    <option value="cebu">Cebu</option>
+                                    <option value="davao">Davao</option>
+                                    <option value="iloilo">Iloilo</option>
+                                    <option value="cagayan-de-oro">Cagayan de Oro</option>
+                                    <option value="bacolod">Bacolod</option>
+                                    <option value="zamboanga">Zamboanga</option>
+                                    <option value="bohol">Bohol (Panglao)</option>
+                                    <option value="clark">Clark</option>
+                                    <option value="dumaguete">Dumaguete</option>
+                                    <option value="tacloban">Tacloban</option>
+                                    <option value="manila">Manila</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="arrival" class="form-label">To</label>
+                                <select id="arrival" class="form-select" required>
+                                    <option value="">Choose a route</option>
+                                    <option value="cebu">Cebu</option>
+                                    <option value="davao">Davao</option>
+                                    <option value="iloilo">Iloilo</option>
+                                    <option value="cagayan-de-oro">Cagayan de Oro</option>
+                                    <option value="bacolod">Bacolod</option>
+                                    <option value="zamboanga">Zamboanga</option>
+                                    <option value="bohol">Bohol (Panglao)</option>
+                                    <option value="clark">Clark</option>
+                                    <option value="dumaguete">Dumaguete</option>
+                                    <option value="tacloban">Tacloban</option>
+                                    <option value="manila">Manila</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row g-1 mb-3">
+                            <div class="col-md-6">
+                                <label for="departureDate" class="form-label">Date of Travel</label>
+                                <input type="date" id="departureDate" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="returnDate" class="form-label">Return Date</label>
+                                <input type="date" id="returnDate" class="form-control" required>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="mb-3 w-100 d-flex align-items-center justify-content-center">
+                  <button class="btn btn-primary w-75">Search Flight</button>
+              </div>
+            </div>
+            <h4 class="text-center mt-5">Highlight Destination</h4>
+            <p class="text-center">Discover the hottest local spots you can't miss!</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <img src="image/manila.jpg" height="250" alt="" class="rounded w-100">
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <img src="image/cebu.jpg" height="250" alt="" class="rounded w-100">
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <img src="image/davao.webp" height="250" alt="" class="rounded w-100">
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <img src="image/tagbilaran.jpg" height="250" alt="" class="rounded w-100">
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <img src="image/taclobb.jpg" height="250" alt="" class="rounded w-100">
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <img src="image/iloilo.jpg" height="250" alt="" class="rounded w-100">
+                    </div>
+                </div>
+            </div> 
+            <footer class="text-center text-dark py-3">
+              <p class="mb-0">© 2024 Sharphades. All rights reserved.</p>
+          </footer>
+        </div>
+        
+    </section>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        document.addEventListener('scroll', function() {
+            if (window.scrollY === 0) {
+                navbar.classList.remove('blur');
+            } else {
+                navbar.classList.add('blur');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+:root {
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Protest';
+    src: url('/fonts/ProtestStrike-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#navbar {
+    transition: backdrop-filter 0.5s ease-in-out;
+}
+
+.blur {
+    backdrop-filter: blur(100px);
+    background-color: hsla(242, 100%, 84%, 0.199) !important;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.black {
+    color: black;
+    font-family: 'Protest';
+}
+
+.white {
+    color: #ddddd3;
+}
+
+* {
+    font-family: 'Poppins';
+}
+
+.nav-item {
+    font-size: 19px;
+}
+
+.navbar-brand {
+    font-family: 'Protest';
+}
+
+.bg-purple {
+    background-color: #B1AFFF !important;
+}
+
+.bg-yellow {
+    background-color: #FFFED3;
+}
+
+.main-section {
+    background-image: linear-gradient(to bottom, rgba(219, 216, 216, 0), rgba(15, 11, 11, 0.7)), url(/image/mainbg.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 75%;
+}
+
+.button {
+    align-items: center;
+    background-image: linear-gradient(144deg, #FFFED3, #5b42f3 50%, #0d6efd);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .button:active,
+  .button:hover {
+    outline: 0;
+  }
+  
+  .button span {
+    background-color: rgb(5, 6, 45);
+    padding: 12px 28px;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+  }
+  
+  .button:hover span {
+    background: none;
+  }
+  
+  .button:active {
+    transform: scale(0.9);
+  }
+  
+  .form {
+    background-color: #dfeaf0;
+    border-radius: 30px;
+    box-shadow: 0 0 #0000,0 0 #0000,0 0 #0000, 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
+  }
