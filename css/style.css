@@ -68,6 +68,39 @@ body {
     height: 75%;
 }
 
+/* para sa login button */
+.loginbtn{
+    padding: 8px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    border: 1px rgb(233, 215, 215) solid;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+  }
+  
+  .loginbtn:hover {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+  }
+  
+  .loginbtn:active {
+    letter-spacing: 3px;
+    background-color: #5b42f3;
+    color: hsl(0, 0%, 100%);
+    box-shadow: #5b42f3 0px 0px 0px 0px;
+    transform: translateY(2px);
+    transition: 100ms;
+  }
+  
+
+ /* sa tunga nga button sa get started */
 .button {
     align-items: center;
     background-image: linear-gradient(144deg, #FFFED3, #5b42f3 50%, #0d6efd);
