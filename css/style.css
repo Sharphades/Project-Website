@@ -23,7 +23,7 @@
 
 .blur {
     backdrop-filter: blur(100px);
-    background-color: hsla(242, 100%, 84%, 0.199) !important;
+    background-color: hsla(0, 0%, 0%, 0.514) !important;
     box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -45,12 +45,14 @@ body {
     font-family: 'Poppins';
 }
 
-.nav-item {
+.navbar-nav .nav-link {
+    color: white !important;
     font-size: 19px;
 }
 
-.navbar-brand {
+ .navbar-brand {
     font-family: 'Protest';
+    /* color: rgb(133, 146, 19) !important; */
 }
 
 .bg-purple {
@@ -62,7 +64,7 @@ body {
 }
 
 .main-section {
-    background-image: linear-gradient(to bottom, rgba(219, 216, 216, 0), rgba(15, 11, 11, 0.7)), url(/image/mainbg.avif);
+    background-image: linear-gradient(to bottom, rgba(219, 216, 216, 0), rgba(15, 11, 11, 0.7)), url(/image/main.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 75%;
@@ -71,6 +73,7 @@ body {
 /* para sa login button */
 .loginbtn{
     padding: 8px 30px;
+    color: hsl(0, 0%, 100%);
     border-radius: 10px;
     cursor: pointer;
     border: 0;
