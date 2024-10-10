@@ -1,8 +1,3 @@
-:root {
-    --tw-ring-offset-shadow: 0 0 #0000;
-    --tw-ring-shadow: 0 0 #0000;
-    --tw-shadow: 0 0 #0000;
-}
 @font-face {
     font-family: 'Poppins';
     src: url('/fonts/Poppins-Regular.ttf') format('truetype');
@@ -23,7 +18,7 @@
 
 .blur {
     backdrop-filter: blur(100px);
-    background-color: #3f3c91b7 !important;
+    background-color: hsla(207, 83%, 45%, 0.795) !important;
     box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -56,21 +51,13 @@ body {
 }
 
 .bg-purple {
-    background-color: #7695FF !important;
+    background-color: #B1AFFF !important;
 }
 
 .bg-yellow {
-    background-color: #f5f5f5;
+    background-color: #FFFED3;
 }
 
-.main-section {
-    background-image: linear-gradient(to bottom, rgba(219, 216, 216, 0), rgba(15, 11, 11, 0.7)), url(/image/main.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 75%;
-}
-
-/* para sa login button */
 .loginbtn{
     padding: 8px 30px;
     color: hsl(0, 0%, 100%);
@@ -101,7 +88,13 @@ body {
   }
   
 
- /* sa tunga nga button sa get started */
+.main-section {
+    background-image: linear-gradient(to bottom, rgba(219, 216, 216, 0), rgba(15, 11, 11, 0.7)), url(/image/main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
 .button {
     align-items: center;
     background-image: linear-gradient(144deg, #FFFED3, #5b42f3 50%, #0d6efd);
@@ -147,14 +140,83 @@ body {
   .button:active {
     transform: scale(0.9);
   }
+
+/* para sa form */
+.colorful-form {
+  opacity: 0;
+  transform: translateY(-50px);
+  visibility: hidden; /* Hidden by default */
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+  }
+
+  .colorful-form.anim {
+    opacity: 1;
+  transform: translateY(0); 
+  visibility: visible;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  }
   
-  .form {
-    background-color: #dfeaf0;
-    border-radius: 30px;
-    box-shadow: 0 0 #0000,0 0 #0000,0 0 #0000, 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+  }
+  
+  textarea.form-input {
+    height: 100px;
+  }
+  
+  .form-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #3f3c91;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-button:hover {
+    background-color: #2d2a85;
   }
 
-
-  body::-webkit-scrollbar {
-    display: none;
+  .container-fluid.custom-position {
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    backdrop-filter: blur(20px);
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
   }
+
+  .container-fluid.custom-position.anim {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Ensure the transition is smooth */
+}
