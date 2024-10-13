@@ -26,7 +26,7 @@
                     <a class="nav-link" href="#">Contact us</a>
                 </li>
             </ul>
-            <button class="loginbtn mt-2">Login</button>
+            <a style="text-decoration: none;" href="sign.html"><button class="loginbtn">Login</button></a>
         </div>
     </div>
 
@@ -49,7 +49,7 @@
                             <a class="nav-link" href="contacts.html">Contact us</a>
                         </li>
                     </ul>
-                    <button class="loginbtn">Login</button>
+                    <a style="text-decoration: none;" href="sign.html"><button class="loginbtn">Login</button></a>
                 </div>
             </div>
         </nav>
@@ -71,6 +71,15 @@
                 <form class="w-75">
                     <fieldset class="mb-4">
                         <div class="row g-1 mb-3">
+                            <fieldset class="mb-2 mx-1">
+                                <div class="btn-group w-100" role="group" aria-label="Travel Options">
+                                    <input type="radio" class="btn-check" id="roundWay" name="travelOptions" autocomplete="off" checked>
+                                    <label class="btn btn-outline-primary" for="roundWay">One Way</label>
+                                
+                                    <input type="radio" class="btn-check" id="roundTrip" name="travelOptions" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="roundTrip">Round Trip</label>
+                                </div>
+                                </fieldset>
                             <div class="col-md-6">
                                 <label for="departure" class="form-label">From</label>
                                 <select id="departure" class="form-select" required>
@@ -107,11 +116,11 @@
                             </div>
                         </div>
                         <div class="row g-1 mb-3">
-                            <div class="col-md-6">
+                            <div class="col-md-6 w-100" id="travel">
                                 <label for="departureDate" class="form-label">Date of Travel</label>
                                 <input type="date" id="departureDate" class="form-control" required>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 d-none" id="return">
                                 <label for="returnDate" class="form-label">Return Date</label>
                                 <input type="date" id="returnDate" class="form-control" required>
                             </div>
@@ -119,7 +128,7 @@
                     </fieldset>
                 </form>
                 <div class="mb-3 w-100 d-flex align-items-center justify-content-center">
-                  <button class="btn btn-primary w-75">Search Flight</button>
+                  <button class="btn btn-primary w-75">Book Flight</button>
               </div>
             </div>
             <h4 class="text-center mt-5">Highlight Destination</h4>
@@ -151,15 +160,7 @@
           </footer>
         </div>
     </section>
-    <script>
-        const navbar = document.getElementById('navbar');
-        document.addEventListener('scroll', function() {
-            if (window.scrollY === 0) {
-                navbar.classList.remove('blur');
-            } else {
-                navbar.classList.add('blur');
-            }
-        });
+    <script src="js/index.js">
     </script>
 </body>
 </html>

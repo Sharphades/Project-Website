@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Protest';
+    src: url('/fonts/ProtestStrike-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Poppins';
+}
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.main {
+    background-image: linear-gradient(to bottom, rgba(219, 216, 216, 0), rgba(15, 11, 11, 0.7)), url(/image/main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form {
+    background: rgba(255, 255, 255, 0.26);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border: 1px solid rgba(255, 255, 255, 0.21);
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 500px;
+    padding: 20px;
+    width: 400px;
+    opacity: 0;
+    transform:  translateX(-200px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  }
+
+  .form2 {
+    background: rgba(255, 255, 255, 0.26);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border: 1px solid rgba(255, 255, 255, 0.21);
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 500px;
+    padding: 20px;
+    width: 400px;
+    opacity: 1;
+    transform:  translateX(0px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  }
+
+  .form.anim {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .form2.anim2 {
+    opacity: 0;
+    transform:  translateX(200px);
+  }
+  
+  .title {
+    color: #001;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+  }
+  
+  .subtitle {
+    color: #001;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .input {
+    background-color: transparent;
+    border-radius: 12px;
+    border: white 1px solid;
+    box-sizing: border-box;
+    color: #001;
+    font-size: 18px;
+    height: 100%; 
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+  }
+  
+  .cut {
+    opacity: 0;
+    background-color: #15172b;
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 76px;
+  }
+  
+  .cut-short {
+    width: 50px;
+  }
+  
+  .iLabel {
+    color: #001;
+    font-weight: bold;
+    font-family: sans-serif;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    transform-origin: 0 50%;
+  }
+  
+  .submit {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 38px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .submit:active {
+    background-color: #06b;
+  }
+
+  #absolute {
+    position: absolute;
+    top: 0;
+  }
+
+  .show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .fade {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  
