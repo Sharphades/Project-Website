@@ -80,18 +80,19 @@ bookbtn.onclick = function() {
         } else if (document.getElementById('roundTrip').checked == false && (!departure || !arrival || !departureDate)) {
             alert('butngi tanan ')
         } else {
-            let bookings = JSON.parse(localStorage.getItem(getLoggedUser().firstname)) || [];
+            let bookings = JSON.parse(localStorage.getItem('bookings')) || [];
 
             const data = {
                 fullname: getLoggedUser().firstname + " " + getLoggedUser().lastname,
+                email: getLoggedUser().email,
                 departure: departure,
                 arrival: arrival,
                 departureDate: departureDate,
-                returnDate: returnDate
+                returnDate: returnDate,
+                price: 100
             };
             
             bookings.push(data);
-            
             
             localStorage.setItem('bookings', JSON.stringify(bookings));
 

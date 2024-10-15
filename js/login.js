@@ -65,10 +65,11 @@ submit[1].addEventListener('click', (e) => {
 
 function loginUser() {
     let emailFound = false;
+    let oke = 0;
     for (let i in getUsers()) { 
         
     
-        if (email.value === getUsers()[i].email && getUsers()[i].type === 'user') {
+        if (email.value === getUsers()[i].email && password.value === getUsers()[i].password && getUsers()[i].type === 'user') {
             const userData = {
                 firstname: getUsers()[i].firstname,
                 lastname: getUsers()[i].lastname,
@@ -79,23 +80,28 @@ function loginUser() {
             localStorage.setItem('loggedUser', JSON.stringify(userData));
             localStorage.setItem('islog', 'true');
             emailFound = true;
+            oke = i;
             window.location.href = 'index.html';
             break;
-        } else if (email.value === getUsers()[i].email && getUsers()[i].type === 'admin') {
+        } else if (email.value === getUsers()[i].email && password.value === getUsers()[i].password && getUsers()[i].type === 'admin') {
 
             window.location.href = 'admin.html';
             localStorage.setItem('islog', 'true');
             localStorage.setItem('isAdmin', 'true');
             emailFound = true;
+            oke = i;
             break;
         }
     }
-    
 
     if (email.value === '' && password.value === '' ) {
-
+        alert('Enter details')
+    }else if (email.value !== getUsers()[oke].email || password.value !== getUsers()[oke].password) {
+        alert('You email or password is wrong')
     } else if (password.value === '') {
         alert('pls input password');
+        console.log('ss');
+        
     } else if (email.value === '') {
         alert('pls input email');
     }

@@ -143,11 +143,11 @@ header h3 {
     margin: 0;
   }
 
-  table tbody tr {
+    tr {
     transition: background-color 200ms ease-in-out;
   }
 
-  table tbody tr:hover {
+    tr:hover {
     background-color: #161615b9;
   }
 
