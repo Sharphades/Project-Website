@@ -99,9 +99,7 @@ function loginUser() {
     }else if (email.value !== getUsers()[oke].email || password.value !== getUsers()[oke].password) {
         alert('You email or password is wrong')
     } else if (password.value === '') {
-        alert('pls input password');
-        console.log('ss');
-        
+        alert('pls input password');        
     } else if (email.value === '') {
         alert('pls input email');
     }
