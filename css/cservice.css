@@ -143,14 +143,18 @@ body {
 
 /* para sa form */
 .colorful-form {
-  opacity: 0;
-  transform: translateY(-50px);
-  visibility: hidden; /* Hidden by default */
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+    opacity: 0;
+    transform: translateY(-50px);
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
     width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f5f5f5;
+    background: rgba(255, 255, 255, 0.26);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border: 1px solid rgba(255, 255, 255, 0.21);
     border-radius: 10px;
   }
 
@@ -176,9 +180,18 @@ body {
     width: 100%;
     padding: 10px;
     border: none;
-    background-color: #fff;
-    color: #333;
+    background-color: transparent;
+    border: white 1px solid;
+    color: #ffffff;
     border-radius: 5px;
+  }
+    
+  .form-input:placeholder-shown {
+    color: white;
+  }
+    
+  .form-input:focus {
+    outline: 0;
   }
   
   textarea.form-input {

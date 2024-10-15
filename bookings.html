@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script defer src="js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="css/booking.css">
+    <script defer src="js/bookings.js"></script>
 </head>
 <body class="bg-yellow">
     <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -26,7 +27,7 @@
                     <a class="nav-link" href="#">Contact us</a>
                 </li>
             </ul>
-            <button class="loginbtn mt-2">Login</button>
+            <a style="text-decoration: none;" href="sign.html"><button class="loginbtn">Login</button></a>
         </div>
     </div>
     <section class="main-section d-flex flex-column">
@@ -48,7 +49,8 @@
                             <a class="nav-link" href="contacts.html">Contact us</a>
                         </li>
                     </ul>
-                    <button class="loginbtn">Login</button>
+                    <a style="text-decoration: none;" href="sign.html"><button class="loginbtn" id="loginbtn">Login</button></a>
+                    <a style="text-decoration: none;" href=""><button class="loginbtn d-none" id="logoutbtn">Logout</button></a>
                 </div>
             </div>
         </nav>

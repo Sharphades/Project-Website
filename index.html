@@ -42,14 +42,18 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="bookings.html">Bookings</a>
+                        <li style="cursor: pointer;" class="nav-item" id="bookings">
+                            <a class="nav-link">Bookings</a>
+                        </li>
+                        <li class="nav-item d-none" id="foradmin">
+                            <a class="nav-link" href="admin.html">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contacts.html">Contact us</a>
                         </li>
                     </ul>
-                    <a style="text-decoration: none;" href="sign.html"><button class="loginbtn">Login</button></a>
+                    <a style="text-decoration: none;" href="sign.html"><button class="loginbtn" id="loginbtn">Login</button></a>
+                    <a style="text-decoration: none;" href=""><button class="loginbtn d-none" id="logoutbtn">Logout</button></a>
                 </div>
             </div>
         </nav>
@@ -57,7 +61,7 @@
             <div class="container d-flex flex-column align-items-center justify-content-center">
                 <h1 class="black text-center">Life Is Short And The World Is Wide!</h1>
                 <p class="white text-center">To get the best of your adventure you just need to leave and go where you like. We are waiting for you.</p>
-                <a style="text-decoration: none;">
+                <a style="text-decoration: none;" href="#form">
                     <button class="button">
                         <span class="text">Get started</span>
                     </button>
@@ -65,7 +69,7 @@
             </div>
         </div>
         <div id="form" class="container-fluid">
-            <div class="container d-flex flex-column align-items-center justify-content-center form py-2">
+            <div class="container d-flex flex-column align-items-center justify-content-center form py-2" id="mainForm">
                 <h4 class="mb-4 mt-3">Book your escape today!</h4>
                 
                 <form class="w-75">
@@ -128,29 +132,29 @@
                     </fieldset>
                 </form>
                 <div class="mb-3 w-100 d-flex align-items-center justify-content-center">
-                  <button class="btn btn-primary w-75">Book Flight</button>
+                  <button class="btn btn-primary w-75" id="bookbtn">Book Flight</button>
               </div>
             </div>
-            <h4 class="text-center mt-5">Highlight Destination</h4>
-            <p class="text-center">Discover the hottest local spots you can't miss!</p>
+            <h4 id="scrollAnim" class="text-center mt-5">Highlight Destination</h4>
+            <p  id="scrollAnim" class="text-center">Discover the hottest local spots you can't miss!</p>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div id="scrollAnim" class="col-lg-4 col-md-6 col-12 mb-4">
                         <img src="image/manila.jpg" height="250" alt="" class="rounded w-100">
                     </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div id="scrollAnim" class="col-lg-4 col-md-6 col-12 mb-4">
                         <img src="image/cebu.jpg" height="250" alt="" class="rounded w-100">
                     </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div id="scrollAnim" class="col-lg-4 col-md-6 col-12 mb-4">
                         <img src="image/davao.webp" height="250" alt="" class="rounded w-100">
                     </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div id="scrollAnim" class="col-lg-4 col-md-6 col-12 mb-4">
                         <img src="image/tagbilaran.jpg" height="250" alt="" class="rounded w-100">
                     </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div id="scrollAnim" class="col-lg-4 col-md-6 col-12 mb-4">
                         <img src="image/taclobb.jpg" height="250" alt="" class="rounded w-100">
                     </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div id="scrollAnim" class="col-lg-4 col-md-6 col-12 mb-4">
                         <img src="image/iloilo.jpg" height="250" alt="" class="rounded w-100">
                     </div>
                 </div>

@@ -10,42 +10,45 @@
 <body class="main">
     <div class="container-fluid vh-100 d-flex justify-content-center align-items-center fade" id="signup">
         <div class="form">
+          <form action="">
             <div class="title">Welcome</div>
             <div class="subtitle">Let's create your account!</div>
             
             <div class="form-group d-flex align-items-center justify-content-center flex-row">
                 <div class="input-container">
                     <label class="iLabel" for="firstname">First name</label>
-                    <input placeholder="" type="text" class="input" id="firstname">
+                    <input placeholder="" type="text" class="input" id="firstname" required>
                     <div class="cut"></div>
                 </div>
                 <div class="input-container ms-1">
                     <label class="iLabel" for="lastname">Last name</label>
-                    <input placeholder="" type="text" class="input" id="lastname">
+                    <input placeholder="" type="text" class="input" id="lastname" required>
                     <div class="cut"></div>
                 </div>
             </div>
             <div class="input-container mt-4">
                 <label class="iLabel" for="email">Email</label>
-              <input placeholder="" type="text" class="input" id="email">
+              <input placeholder="" type="email" class="input" id="email" required>
               <div class="cut cut-short"></div>
             </div>
             <div class="input-container mt-4">
                 <label class="iLabel" for="confirmemail">Confirm Email</label>
-              <input placeholder="" type="text" class="input" id="confirmemail">
+              <input placeholder="" type="email" class="input" id="confirmemail" required>
               <div class="cut cut-short"></div>
             </div>
             <div class="input-container mt-4">
                 <label class="iLabel" for="passwordup">Password</label>
-              <input placeholder="" type="password" class="input" id="passwordup">
+              <input placeholder="" type="password" class="input" id="passwordup" required>
               <div class="cut cut-short"></div>
             </div>
             <button class="submit" type="text">Sign Up</button>
             <div style="color: white;" class=" text-center">Already have account? <a id="clickSign" href="#absoute">Click here!</a></div>
+          </form>
           </div>
     </div>
     <div class="container-fluid vh-100 d-flex justify-content-center align-items-center" id="absolute" >
-        <div class="form2">
+      <div class="form2">
+        <form action="">
             <div class="title">Welcome</div>
             <div class="subtitle">Enter details!</div>
             
@@ -53,16 +56,17 @@
             </div>
             <div class="input-container mt-4">
                 <label class="iLabel" for="email3">Email</label>
-              <input placeholder="" type="text" class="input" id="email3">
+              <input placeholder="" type="email" class="input" id="email3" required>
               <div class="cut cut-short"></div>
             </div>
             <div class="input-container mt-4">
                 <label class="iLabel" for="password">Password</label>
-              <input placeholder="" type="password" class="input" id="password">
+              <input placeholder="" type="password" class="input" id="password" required>
               <div class="cut cut-short"></div>
             </div>
             <button class="submit mt-5" type="text">Log in</button>
             <div style="color: white;" class=" text-center">Don't have account? <a id="clickLog" href="#signup">Click here!</a></div>
+          </form>
           </div>
     </div>
     <script src="js/login.js"></script>

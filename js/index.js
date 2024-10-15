@@ -2,6 +2,23 @@ const buttons = document.querySelectorAll('.btn-check');
 const returnDiv = document.getElementById('return');
 const travel = document.getElementById('travel');
 const navbar = document.getElementById('navbar');
+const mainForm = document.getElementById('mainForm');
+const getStarted = document.querySelector('.button');
+const animation = document.querySelectorAll('#scrollAnim');
+const logoutbtn = document.getElementById('logoutbtn');
+const loginbtn = document.getElementById('loginbtn');
+const foradmin = document.getElementById('foradmin');
+const bookbtn = document.getElementById('bookbtn');
+const bookings = document.getElementById('bookings');
+
+
+bookings.onclick = function() {
+    if (localStorage.getItem('islog')) {
+        location.href = 'bookings.html';
+    } else {
+        location.href = 'sign.html';
+    }
+};
 
 buttons.forEach(button => {
     button.addEventListener('change', () => {
@@ -15,10 +32,98 @@ buttons.forEach(button => {
     });
 });
 
+getStarted.addEventListener('click', () => {
+    mainForm.style.transform = 'translateY(0px)';
+});
+
+
 document.addEventListener('scroll', function() {
     if (window.scrollY === 0) {
             navbar.classList.remove('blur');
+            mainForm.style.transform = 'translateY(200px)';
+            mainForm.style.opacity = 0;
     } else {
             navbar.classList.add('blur');
+            mainForm.style.opacity = 1;
+            mainForm.style.transform = 'translateY(0px)';
     }
+
+    animation.forEach(item => { 
+        const itemRect = item.getBoundingClientRect();
+        
+        if (itemRect.bottom < window.innerHeight) {
+            item.style.transform = 'translateY(0)';
+            item.style.opacity = '1';
+        } else {
+            item.style.transform = 'translateY(30px)';
+            item.style.opacity = '0';
+        }
+        
+    });
 });
+
+logoutbtn.addEventListener('click', () => {
+    localStorage.removeItem('islog');
+    localStorage.removeItem('isAdmin');
+    localStorage.removeItem('loggedUser');
+});
+
+bookbtn.onclick = function() {
+    if (localStorage.getItem('islog') === 'true') {
+        const departure = document.getElementById('departure').value;
+        const arrival = document.getElementById('arrival').value;
+        const departureDate = document.getElementById('departureDate').value;
+        const returnDate = document.getElementById('returnDate').value;
+
+        if (document.getElementById('roundTrip').checked && (!departure || !arrival || !departureDate || !returnDate)) {
+            alert('butngi sad mam'); 
+        } else if (document.getElementById('roundTrip').checked == false && (!departure || !arrival || !departureDate)) {
+            alert('butngi tanan ')
+        } else {
+            let bookings = JSON.parse(localStorage.getItem(getLoggedUser().firstname)) || [];
+
+            const data = {
+                fullname: getLoggedUser().firstname + " " + getLoggedUser().lastname,
+                departure: departure,
+                arrival: arrival,
+                departureDate: departureDate,
+                returnDate: returnDate
+            };
+            
+            bookings.push(data);
+            
+            
+            localStorage.setItem('bookings', JSON.stringify(bookings));
+
+            location.reload();
+        }
+    } else {
+        location.href = 'sign.html'
+    }
+}
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('islog') === 'true') {
+        logoutbtn.classList.remove('d-none');
+        loginbtn.classList.add('d-none');
+    } else {
+        logoutbtn.classList.add('d-none');
+        loginbtn.classList.remove('d-none');
+    }
+
+    if (localStorage.getItem('isAdmin') === 'true') {
+        foradmin.classList.remove('d-none');
+    } else {
+        foradmin.classList.add('d-none');
+    }
+    
+});
+
+
+function getLoggedUser() {
+    return JSON.parse(localStorage.getItem('loggedUser'));
+}
