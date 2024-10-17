@@ -10,8 +10,13 @@ function remove() {
     formBG.classList.remove('anim');
 }
 button.addEventListener('click', () => {
-    formBG.classList.add('anim');
-    form.classList.add('anim');     
+    if (localStorage.getItem('islog')) {
+        formBG.classList.add('anim');
+        form.classList.add('anim');  
+    } else {
+        location.href = 'sign.html';
+    }
+       
 });
 
 cancelButton.addEventListener('click', remove);
@@ -40,3 +45,20 @@ document.addEventListener('DOMContentLoaded', () => {
     
 });
 
+document.getElementById('submit-button').addEventListener('click',() =>{
+    let reports = getReports();
+
+    const userReports = {
+        fullName: document.getElementById('name-input').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+
+    reports.push(userReports);
+    localStorage.setItem('Reports', JSON.stringify(reports));
+    remove();
+});
+
+function getReports() {
+    return JSON.parse(localStorage.getItem('Reports')) || [];
+}

@@ -5,6 +5,7 @@
     const bookingCounts = document.getElementById('bookingCounts');
     const manageFlightTable = document.getElementById('manageFlightTable');
     const manageUserTable = document.getElementById('manageUserTable');
+    const reportsTable = document.getElementById('reportsTable');
 
     sidebarBtns.forEach((btn, index) => {
         btn.addEventListener('click', () => {
@@ -120,7 +121,7 @@
         return JSON.parse(localStorage.getItem('Users')) || [];
     }
 
-    function deleteRow(item) {               
+    function deleteUserTableRow(item) {               
         if (item.parentElement.parentElement.cells[1].innerText === JSON.parse(localStorage.getItem('loggedUser')).email) {
             localStorage.removeItem('islog');
             localStorage.removeItem('isAdmin');
@@ -154,10 +155,51 @@
                 emailCell.textContent = user.email;
                 passwordCell.textContent = user.password;
                 typeCell.textContent = user.type;
-                actionCell.innerHTML = `<button type="button" class="btn btn-primary">Edit</button> <button type="button" onClick="deleteRow(this)" class="btn btn-danger">Delete</button>`;
+                actionCell.innerHTML = `<button type="button" class="btn btn-primary">Edit</button> <button type="button" onClick="deleteUserTableRow(this)" class="btn btn-danger">Delete</button>`;
 
         }
     }
 
     listAllUsers();
+    
+
+    function getReports() {
+        return JSON.parse(localStorage.getItem('Reports')) || [];
+    }
+
+    function deleteReportsTableRow(item) {               
+
+        let ikapila = item.parentElement.parentElement.rowIndex;
+        reportsTable.deleteRow(ikapila);
+        let reports = getReports();
+
+
+        reports.splice(ikapila-1, 1);
+        
+        localStorage.setItem('Reports', JSON.stringify(reports));
+    }
+
+    function listReports() {
+        let allreports = getReports();
+        for (let i = 0; i<allreports.length; i++) {
+            const newRow = reportsTable.insertRow();
+            const reports = allreports[i];
+
+            const fullNameCell = newRow.insertCell(0);
+            const emailCell = newRow.insertCell(1);
+            const messageCell = newRow.insertCell(2);
+            const actionCell = newRow.insertCell(3);
+                
+            fullNameCell.textContent = reports.fullName.toUpperCase();
+            emailCell.textContent = reports.email;
+            messageCell.textContent = reports.message.toUpperCase();
+            actionCell.innerHTML = `<button type="button" class="btn btn-primary">Edit</button> <button onClick="deleteReportsTableRow(this)" type="button" class="btn btn-danger">Delete</button>`;
+
+            console.log(2);
+            
+        }
+    }
+
+
+  listReports();
     

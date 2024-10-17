@@ -84,7 +84,15 @@ function loginUser() {
             window.location.href = 'index.html';
             break;
         } else if (email.value === getUsers()[i].email && password.value === getUsers()[i].password && getUsers()[i].type === 'admin') {
-
+            const userData = {
+                firstname: getUsers()[i].firstname,
+                lastname: getUsers()[i].lastname,
+                email: getUsers()[i].email,
+                password: getUsers()[i].password
+            };
+            
+            localStorage.setItem('loggedUser', JSON.stringify(userData));
+            
             window.location.href = 'admin.html';
             localStorage.setItem('islog', 'true');
             localStorage.setItem('isAdmin', 'true');

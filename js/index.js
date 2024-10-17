@@ -128,3 +128,22 @@ document.addEventListener('DOMContentLoaded', () => {
 function getLoggedUser() {
     return JSON.parse(localStorage.getItem('loggedUser'));
 }
+
+if (!localStorage.getItem('Users')) {
+    let users = getUsers();
+
+    const admin = {
+        firstname: 'Sharp',
+        lastname: 'Hades',
+        email: 'sharphades2004@gmail.com',
+        password: 'admin@',
+        type: 'admin'
+    };
+
+    users.push(admin);
+    localStorage.setItem('Users', JSON.stringify(users));
+}
+        
+function getUsers() {
+    return JSON.parse(localStorage.getItem('Users')) || [];
+}
